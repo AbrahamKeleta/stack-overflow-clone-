@@ -25,7 +25,6 @@ class IssuesController < ApplicationController
   	end 
   end 
 
-
   def edit
     @issue = Issue.find(params[:id]) 
   end 
@@ -37,10 +36,12 @@ class IssuesController < ApplicationController
       redirect_to root_path
     end
   end 
+
+
+
   private 
 
   def issue_params 
   	params.require(:issue).permit(:queue, :solution)
   end 
-
 end

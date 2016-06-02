@@ -1,6 +1,10 @@
 class IssuesController < ApplicationController
+  
   def index
-  	@issues = Issue.all
+    @issues = Issue.all
+    if params[:search]
+      @issues = Issue.search(params[:search])
+    end 
   end
 
   def show
@@ -14,14 +18,29 @@ class IssuesController < ApplicationController
   def create 
   	@issue = Issue.new(issue_params)
   	if @issue.save 
-  		redirect_to issues_url 
+  		respond_to do |format|
+        format.html { redirect_to root_path }
+        format.json { head :no_content }
+      end
   	end 
   end 
 
+
+  def edit
+    @issue = Issue.find(params[:id]) 
+  end 
+
+  def update 
+    @issue = Issue.find(params[:id])
+    if @issue.update_attributes(issue_params)
+      byebug 
+      redirect_to root_path
+    end
+  end 
   private 
 
   def issue_params 
-  	params.require(:issue).permit(:queue, :fix)
+  	params.require(:issue).permit(:queue, :solution)
   end 
 
 end

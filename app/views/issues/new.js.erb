@@ -1,0 +1,5 @@
+$('#add-new-issue').bind('ajax:success', function(e) {
+	e.preventDefault();
+	$('.queue').hide();
+	$('.new-issue-form').fadeIn();
+});

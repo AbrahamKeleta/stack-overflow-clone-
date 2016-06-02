@@ -1,0 +1,260 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+
+
+body {
+	margin: 0;
+	background-color: white;
+}
+
+
+html {
+
+	font-family: stellar;
+}
+
+
+.header {
+ 	text-align: center;
+ 	border-bottom: 1px solid gainsboro;
+ 	background-color: white;
+ 	padding-top: 1em;	
+ 	p {
+ 		letter-spacing: .1em;
+ 	}
+ }
+
+
+.container {
+	background-color: #f1f1f1;
+	.split {
+		width: 49.8%;
+		height: 700px;
+		display: inline-block;
+		vertical-align: top;
+	}
+
+ 	.first-half {
+ 		background-color: #f1f1f1;
+ 		padding: 1em 0;
+ 		.search-bar {
+ 			margin-top: 1em;
+ 			text-align: center;
+ 			.search-container {
+ 				form {
+ 					display: inline;
+			 		input {
+			 			padding: .7em 1em;
+			 			font-size: 14px;
+				    width: 59%;
+				    outline: 0;
+				    border: 0;
+				    margin-top: 2em;
+				    box-shadow: 0 1px 0 0px rgba(0,0,0,0.09);
+			 		}
+			 	}
+		 	}
+		 	form:after {
+		 		content: '|';
+		 		margin: 0 .5em;
+		 		color: gainsboro;
+		 	}
+
+		 	#add-new-issue {
+		 		padding: .7em 1em;
+		    background-color: #0275d8;
+		    border-radius: .2em;
+		    text-decoration: none;
+		    color: rgba(255, 255, 255, .9);
+		 	}
+
+		 	.help {
+		 		display: inline;
+		 		a {
+		 			i {
+		 				color: #07C;
+		 			}
+		 		}
+		 	}
+	 	}
+	 	.help-info {
+	 		float: right;
+	    padding: .3em;
+	    height: 150px;
+	    border: 1px solid gainsboro;
+	    width: 12%;
+	    background-color: white;
+
+	    ul {
+	    	padding: 1em;
+    		margin: 0; 
+    		li {
+			    color: #58C9BF;
+				}
+	    }
+	 	}
+
+	 	.queue {
+	 		position: relative;
+	    margin-top: 2.5em;
+	    margin-left: 13.5%;
+	    background-color: white;
+	    width: 72.5%;
+	    overflow: auto;
+	    height: 550px;
+	 		box-shadow: 0 0 4px 4px rgba(0,0,0,0.09);
+	 		.single-queue {
+	 			padding-top: 1em;
+		 		p {
+		 			font-family: stellar;
+			    letter-spacing: .07em;
+			    display: block;
+			    font-size: 16px;
+			    opacity: .6;
+			    margin-top: 1.4em;
+			    text-transform: uppercase;
+			    padding: 0 1em;
+			    text-align: left;
+			    margin: 0;
+			    max-width: 90%;
+			    a {
+			    	transition: color .3s ease;
+			    	text-decoration: none;
+	    			color: black;
+	    			 &:hover {
+			    	color: #58C9BF;
+			    	}	
+			    }
+		 		}
+
+		 		.issue-navs {
+					float: right;
+					padding: .35em;
+					i.fa.fa-check {
+						color: rgba(0, 0, 0, .4);
+					}
+
+					i.fa.fa-reply {
+						color: rgba(255, 165, 0, .8);
+					}
+				}
+
+		 		#time-created {
+		 			margin: 0 .5em;
+			    font-family: stellar;
+			    font-size: 11px;
+				}
+			}
+	 	}
+ 	}
+ 	.second-half {
+ 		background-color: white;
+ 		text-align: center;
+ 		h2 {
+	    text-transform: capitalize;
+	    opacity: .6;
+	    margin-top: 2em;
+ 		}
+
+ 		.current-content {
+ 			padding: 2em;
+ 			height: 570px;
+ 			overflow: auto;
+ 			span {
+ 				word-spacing: .3em;
+		    letter-spacing: .03em;
+		    line-height: 1.5em;
+		    text-align: left;
+		    font-family: stellar;
+		    font-size: 18px;
+        opacity: 0.78;
+		  }
+
+ 			.highlighted-content {
+ 				background-color: #f1f1f1;
+ 				border: 1px solid gainsboro;
+ 				border-radius: .3em;
+ 				padding: .2em 1em;
+ 				display: block;
+ 				font-family: monospace;
+ 				overflow-x: auto;
+ 				font-size: 16px;
+ 			}
+ 		}
+
+ 		.no-solution {
+ 			padding: 2.6em;
+ 		}
+ 	}
+}
+
+
+form {
+	text-align: center;
+	padding: 2em 0;
+	#issue_queue {
+		width: 62%;
+    padding: 1em;
+    outline: 0;
+    font-size: 18px;
+    font-family: stellar;
+    color: rgba(0, 0, 0, .7)
+	}
+
+	#issue_solution {
+		width: 62%;
+	  margin: 2em 0;
+	  padding: 1em;
+	  height: 400px;
+	  resize: none;
+	  outline: 0;
+	  font-size: 18px;
+    line-height: 1.5em;
+    font-family: stellar;
+    color: rgba(0, 0, 0, .7)
+	}
+
+	#submit_queue:after {
+		content: '|';
+	}
+	#cancel-new-issue {
+		color: #58C9BF;
+
+	}
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1440px) {
+
+   /* Styles for Desktops */
+  .queue {
+  	width: 77% !important;
+  	margin-left: 11.3% !important;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

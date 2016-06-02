@@ -1,2 +1,27 @@
-%h1 Issues#index
-%p Find me in app/views/issues/index.html.erb
+.container 	
+	.split.first-half
+		.search-bar 
+			.search-container
+				= form_for :issue, :method => 'get' do |f|
+					= text_field_tag :search, params[:search], :placeholder => 'Search Queue', :autofocus => true
+				= link_to 'Add', new_issue_path, :id => 'add-new-issue'	, :remote => true 
+				.help
+					= link_to "#", :id => 'help' do 
+						%i.fa.fa-info-circle
+		.help-info{:style => 'display: none;'} 
+			%ul 
+				%li Use ``` to highlight syntax. 
+				%li Search using keywords
+		.queue
+			= render @issues.reverse_order 
+		.new-issue-form{:style => "display: none;"}
+			= render  :partial => 'issues/form'		
+	.split.second-half
+		.current-queue
+			%h2{:id => 'latest-queue-title'} 
+				= @issues.last.queue 
+			.current-content 
+				%span{:id => 'original'}
+					= @issues.last.solution
+			.no-solution{:style => 'display: none;'}
+				= link_to image_tag('https://wyncode.co/wp-content/uploads/2014/08/31.jpg'), 'https://wyncode.co/wp-content/uploads/2014/08/31.jpg', :target => '_blank'

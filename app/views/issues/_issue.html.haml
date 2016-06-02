@@ -1,0 +1,10 @@
+%div{:class => 'single-queue', :id => "queue_#{issue.id}"}
+	.issue-navs	
+		- if issue.solution.size != 0		
+			%i.fa.fa-check
+		= link_to edit_issue_path(issue), :id => 'edit-solution', :title => 'Edit Solution' do 
+			%i.fa.fa-reply		
+	%p 
+		= link_to "#{issue.queue}", issue, :id => "#{issue.id}", :class => 'single_issue', :data => {:clicked_issue => issue}
+	%p{:id => 'time-created'}
+		= issue.created_at.strftime('%d %b %y')

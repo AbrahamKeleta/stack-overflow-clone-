@@ -1,10 +1,8 @@
 Rails.application.routes.draw do
+  
+
+  get '/issues/:id/edit', to: 'issues#edit'
   resources :issues
-
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
-
-  # You can have the root of your site routed with "root"
   root 'issues#index'
 
   # Example of regular route:

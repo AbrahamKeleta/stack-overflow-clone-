@@ -1,0 +1,8 @@
+= form_for :issue, :method => 'put' do |f|
+	= f.text_field :queue, :placeholder => 'Queue Title', :spellcheck => false
+	%br
+	= f.text_area  :solution, :placeholder => 'Solution', :spellcheck => false
+	%br
+	= f.submit 'Save Changes', :id => 'submit_queue'
+	= link_to 'cancel', root_path, :id => 'cancel-new-issue'
+	

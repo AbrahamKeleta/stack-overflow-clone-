@@ -20,6 +20,6 @@
 				= @issues.last.queue
 			.current-content
 				%span{:id => 'original'}
-				= @issues.last.solution
+					= @issues.last.solution
 			.no-solution{:style => 'display: none;'}
 				= link_to image_tag('https://wyncode.co/wp-content/uploads/2014/08/31.jpg', size: '500x380'), 'https://wyncode.co/wp-content/uploads/2014/08/31.jpg', :target => '_blank'

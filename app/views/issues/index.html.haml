@@ -13,9 +13,7 @@
 				%li Use ``` to highlight syntax. 
 				%li Search using keywords
 		.queue
-			= render @issues.reverse_order 
-		.new-issue-form{:style => "display: none;"}
-			= render  :partial => 'issues/form'		
+			= render @issues.reverse_order 	
 	.split.second-half
 		.current-queue
 			%h2{:id => 'latest-queue-title'} 

@@ -32,9 +32,10 @@ class IssuesController < ApplicationController
   def update 
     @issue = Issue.find(params[:id])
     if @issue.update_attributes(issue_params)
-      byebug 
       redirect_to root_path
-    end
+    else 
+      render 'edit'
+    end 
   end 
 
 

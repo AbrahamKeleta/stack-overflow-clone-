@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
-  
-
-  get '/issues/:id/edit', to: 'issues#edit'
-  resources :issues
+    
+  resources :issues 
   root 'issues#index'
 
   # Example of regular route:

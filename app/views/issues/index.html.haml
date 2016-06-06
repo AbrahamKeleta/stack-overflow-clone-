@@ -17,7 +17,7 @@
 	.split.second-half
 		.current-queue
 			%h2{:id => 'latest-queue-title'} 
-				= @issues.last.queue
+				/ = @issues.last.queue
 			.current-content
 				%span{:id => 'original'}
 					/ = @issues.last.solution

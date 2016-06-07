@@ -17,13 +17,13 @@
 	.split.second-half
 		.current-queue
 			%h2{:id => 'latest-queue-title'} 
-				- if @issues.size = 1
+				- if @issues.size == 1
 					= @issues.first.queue
 				- if @issues.size > 1 
 					= @issues.last.queue
 			.current-content
 				%span{:id => 'original'}
-					- if @issues.size = 1
+					- if @issues.size == 1
 						= @issues.first.solution
 					- if @issues.size > 1 
 						= @issues.last.solution

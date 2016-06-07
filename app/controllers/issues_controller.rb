@@ -32,6 +32,7 @@ class IssuesController < ApplicationController
 
   def update 
     @issue = Issue.find(params[:id])
+    @issue.queue = @issue.queue.downcase
     if @issue.update_attributes(issue_params)
       redirect_to root_path
     else 

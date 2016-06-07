@@ -3,7 +3,7 @@
 		.search-bar 
 			.search-container
 				= form_for :issue, :method => 'get' do |f|
-					= text_field_tag :search, params[:search], :placeholder => 'Search Queue', :autofocus => true
+					= text_field_tag :search, params[:search], :placeholder => 'Search Queue (lower case)', :autofocus => true
 				= link_to 'Add', new_issue_path, :id => 'add-new-issue'
 				.help
 					= link_to "#", :id => 'help' do 

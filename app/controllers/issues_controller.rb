@@ -17,6 +17,7 @@ class IssuesController < ApplicationController
 
   def create 
   	@issue = Issue.new(issue_params)
+    @issue.queue = @issue.queue.downcase
   	if @issue.save 
   		respond_to do |format|
         format.html { redirect_to root_path }

@@ -24,9 +24,6 @@ $(function() {
 	$('.queue').css('height', height - 225);
 	
 
-
-
-
 	$('.single_issue').click(function(e) {
 		e.preventDefault();
 		var data = $('#' + this.id).data('clicked-issue');
